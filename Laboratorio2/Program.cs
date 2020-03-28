@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace Laboratorio2
 {
-
-
     class MainClass
     {
         public static void Main(string[] args)
@@ -23,10 +21,12 @@ namespace Laboratorio2
                 Console.WriteLine("[2]AGREGAR UNA CANCIÓN");
                 Console.WriteLine("[3]SALIR DEL PROGRAMA");
                 Console.WriteLine("[4]VER CANCIONES POR CRITERIO");
+                Console.WriteLine("[5]CREAR PLAYLIST");
+                Console.WriteLine("[6]VER MIS PLAYLISTS");
 
                 eleccion = Convert.ToInt32(Console.ReadLine()); ;
 
-                if (eleccion == 1 || eleccion == 2 || eleccion == 3 || eleccion == 4)
+                if (eleccion == 1 || eleccion == 2 || eleccion == 3 || eleccion == 4 || eleccion == 5 || eleccion == 6)
                 {
                     switch (eleccion)
                     {
@@ -70,6 +70,23 @@ namespace Laboratorio2
                                 Console.WriteLine(listaCriterio[i].Informacion());
                             }
 
+                            break;
+
+                        case 5:
+                            Console.WriteLine("Ingrese un nombre para la Playlist: ");
+                            String nombrePlaylist= Console.ReadLine();
+                            Console.WriteLine("Ingrese criterio de Playlist:");
+                            String criterioPlaylist = Console.ReadLine();
+                            Console.WriteLine("Ingrese valor criterio Playlist:");
+                            String valorCriterioPlaylist = Console.ReadLine();
+
+                            listaCanciones.GenerarPlaylist(criterioPlaylist, valorCriterioPlaylist, nombrePlaylist);
+
+                            break;
+
+                        case 6:
+
+                            listaCanciones.VerMisPlaylists();
                             break;
                         default:
                             Console.WriteLine("Default case");

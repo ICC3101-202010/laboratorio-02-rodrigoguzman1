@@ -23,7 +23,7 @@ namespace Laboratorio2
         public String Informacion()
         {
 
-            return "genero: "+genero+", artista: "+artista+", album: "+album+", nombre: "+nombre;
+            return "genero: " + genero + ", artista: " + artista + ", album: " + album + ", nombre: " + nombre;
         }
     }
 }
